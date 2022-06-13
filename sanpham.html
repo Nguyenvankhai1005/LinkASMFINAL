@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.CSS">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <style>
+        
+        .cot {
+            width: 30%;
+            height: 50%;
+            float: left;
+            padding: 10px;
+            margin-left: 25px;
+
+        }
+
+        .cot img {
+            width: 98%;
+            border-radius: 30px;
+
+        }
+
+        .sp {
+            border: 5px solid rgb(37, 37, 233);
+
+            margin: 1%;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .ten {
+            color: white;
+            font-family: 'Roboto';
+            background-color: rgb(37, 37, 233);
+        }
+
+        .gia del {
+            color: black;
+
+        }
+
+        .gia {
+            color: red;
+            background-color: rgb(37, 37, 233);
+        }
+
+        .muahang a {
+            text-decoration: none;
+            font-size: 20px;
+            color: black;
+        }
+
+        .muahang :hover {
+            color: red;
+        }
+    </style>
+</head>
+<script>
+    function tg() {
+        var tg = new Date();
+        var h = tg.getHours();
+        var ph = tg.getMinutes();
+        var gi = tg.getSeconds();
+
+        if (h < 10) {
+            h = "0" + h;
+        }
+        if (ph < 10) {
+            ph = "0" + ph;
+        }
+        if (gi < 10) {
+            gi = "0" + gi;
+        }
+        var str = `${h}:${ph}:${gi}`;
+
+        document.getElementById("time").innerHTML = str;
+    }
+    setInterval("tg()", 1000);
+</script>
+<body>
+    <div class="cc">
+        <div class="logo-menu">
+            <div class="logo">
+                <img src="img/logodhs.png" alt="">
+            </div>
+            <div class="menu">
+                <nav>
+                    <a href="index.HTML"><i class="fa-solid fa-house"></i> Trang Chủ</a>
+                    <a href="giohang.html"><i class="fa-solid fa-cart-shopping"></i> Giỏ Hàng</a>
+                    <a href="dangkidangnhap.html"><i class="fa-solid fa-gifts"></i> Đăng Kí, Đăng Nhập</a>
+                    <a href="sanpham.html"><i class="fa-solid fa-shop"></i> Sản Phẩm</a>
+                    <a href="chitietsanpham.html"><i class="fa-solid fa-circle-info"></i> Chi Tiết Sản Phẩm</a>
+                    <input type="text">
+                </nav>
+            </div>
+        </div>
+        <header>
+            <div class="dm">
+                <div class="dmsp">
+                    <h2>DANH MỤC HẢI SẢN</h2>
+                    <p>HẢI SẢN: MỰC, TÔM, SÒ</p>
+                    <p>HẢI SẢN: CÁ, CUA, GHẸ</p>
+                    <p>HẢI SẢN: ỐC CÁC LOẠI</p>
+                    <div class="gio">
+                        <p id="time"></p>
+                    </div>
+                </div>
+                <div class="banner">
+                    <div class="khungAnh">
+                        <img id="anh" src="img/slideshow/0.jpg" alt="" width="600" height="400"><br />
+                        <button type="button" onclick="first();"><<< </button>
+                                <button type="button" onclick="previous();"><< </button>
+                                        <button type="button" onclick="next();">>></button>
+                                        <button type="button" onclick="last();">>></button>
+                    </div>
+                    <script>
+                        let khoAnh = [];
+                        const nAnh = 8;
+                        let index = 0;
+
+                        for (let i = 0; i < nAnh; i++) {
+                            khoAnh[i] = new Image();
+                            khoAnh[i].src = `img/slideshow/${i}.jpg`;
+                        }
+                        function previous() {
+                            index--;
+                            if (index < 0) {
+                                index = nAnh - 1;
+                            }
+                            document.getElementById("anh").src = khoAnh[index].src;
+                        }
+                        function next() {
+                            index++;
+                            if (index >= nAnh) {
+                                index = 0;
+                            }
+                            document.getElementById("anh").src = khoAnh[index].src;
+                        }
+                        function first() {
+                            index = 0;
+                            document.getElementById("anh").src = khoAnh[index].src;
+                        }
+                        function last() {
+                            index = nAnh - 1;
+                            document.getElementById("anh").src = khoAnh[index].src;
+                        }
+                        setInterval("next()", 2000);
+                    </script>
+                </div>
+            </div>
+        </header>
+        <h1 style="text-align: center;">Sản Phẩm</h1>
+    <div class="cot">
+        <div class="sp">
+            <div class="ten">Ghẹ</div>
+            <a href="chitietsanpham.html"><img src="img/anhghe.jpg" alt="Hình sản phẩm"></a>
+            <div class="gia"><del>$1000</del>$900</div>
+            <div class="muahang">
+                <a href="muahang.html">Mua hàng</a>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div class="cot">
+        <div class="sp">
+            <div class="ten">Tôm Tích</div>
+            <a href="chitietsanpham.html"><img src="img/tom-tit-600x600.jpg" alt="Hình sản phẩm"></a>
+            <div class="gia"><del>$1000</del>$900</div>
+            <div class="muahang">
+                <a href="muahang.html">Mua hàng</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="cot">
+        <div class="sp">
+            <div class="ten">Tôm Thẻ</div>
+            <a href="chitietsanpham.html"><img src="img/tom.jpg" alt="Hình sản phẩm"></a>
+            <div class="gia"><del>$1000</del>$900</div>
+            <div class="muahang">
+                <a href="muahang.html">Mua hàng</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="cot">
+        <div class="sp">
+            <div class="ten">Nhum</div>
+            <a href="chitietsanpham.html"><img src="img/nhum.jpg" alt="Hình sản phẩm"></a>
+            <div class="gia"><del>$1000</del>$900</div>
+            <div class="muahang">
+                <a href="muahang.html">Mua hàng</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="cot">
+        <div class="sp">
+            <div class="ten">Ngêu</div>
+            <a href="chitietsanpham.html"><img src="img/ngeu.jpg" alt="Hình sản phẩm"></a>
+            <div class="gia"><del>$1000</del>$900</div>
+            <div class="muahang">
+                <a href="muahang.html">Mua hàng</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="cot">
+        <div class="sp">
+            <div class="ten">Hàu</div>
+            <a href="chitietsanpham.html"><img src="img/hau.jpg" alt="Hình sản phẩm"></a>
+            <div class="gia"><del>$1000</del>$900</div>
+            <div class="muahang">
+                <a href="muahang.html">Mua hàng</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="cot">
+        <div class="sp">
+            <div class="ten">Bào Ngư</div>
+            <a href="chitietsanpham.html"><img src="img/baongu.jpg" alt="Hình sản phẩm"></a>
+            <div class="gia"><del>$1000</del>$900</div>
+            <div class="muahang">
+                <a href="muahang.html">Mua hàng</a>
+            </div>
+        </div>
+    </div>
+    <div class="cot">
+        <div class="sp">
+            <div class="ten">Cua</div>
+            <a href="chitietsanpham.html"><img src="img/cua.jpeg" alt="Hình sản phẩm"></a>
+            <div class="gia"><del>$1000</del>$900</div>
+            <div class="muahang">
+                <a href="muahang.html">Mua hàng</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="cot">
+        <div class="sp">
+            <div class="ten">Mực</div>
+            <a href="chitietsanpham.html"><img src="img/anhmuc.jpg" alt="Hình sản phẩm"></a>
+            <div class="gia"><del>$1000</del>$900</div>
+            <div class="muahang">
+                <a href="muahang.html">Mua hàng</a>
+            </div>
+        </div>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+article{
+    padding-bottom: 80px;
+}
+
+article img{
+    border: 5px solid blue;
+    margin-left: 400px;
+    float: left;
+}
+article .ghichu{
+    padding-left: 1000px;
+    line-height: 35px;
+}
+
+article .muahang a{
+    border: 3px solid rgb(17, 15, 2);
+    background-color: yellow;
+    color: red;
+    margin-left: 80px;
+}
+
+
